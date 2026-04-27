@@ -1385,8 +1385,9 @@ def main():
     time.sleep(1)
 
 # Cell
-torch.cuda.set_device(1)
-
+# torch.cuda.set_device(1)  <-- قم بتعطيل هذا السطر
+if torch.cuda.is_available():
+    torch.cuda.set_device(0) # استخدم الكرت الأول إذا وجد، وإلا فلا تفعل شيئاً
 # Cell
 
 # run on/offline
